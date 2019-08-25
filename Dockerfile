@@ -29,8 +29,8 @@ RUN sudo apt-get update && sudo apt-get -q install -y \
     libsqlite3-0 \
     libc6-dev \
     binutils \
-    libgcc-5-dev \
-    libstdc++-5-dev \
+    libgcc-7-dev \
+    libstdc++-7-dev \
     libpython2.7 \
     tzdata \
     git \
