@@ -20,7 +20,7 @@ LABEL Description="Docker Container for the Swift programming language"
 #     pkg-config \
 #     && sudo rm -r /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get -q install -y \
+RUN sudo apt-get update && sudo apt-get -q install -y \
     libatomic1 \
     libbsd0 \
     libcurl4 \
