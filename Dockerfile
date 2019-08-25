@@ -23,7 +23,7 @@ LABEL Description="Docker Container for the Swift programming language"
 RUN sudo apt-get update && sudo apt-get -q install -y \
     clang \
     libicu-dev \
-    libtinfo6 \
+    libtinfo5 \
     libatomic1 \
     libbsd0 \
     libcurl4 \
