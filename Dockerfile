@@ -41,13 +41,13 @@ RUN sudo apt-get update && sudo apt-get -q install -y \
     pkg-config
 
 # Everything up to here should cache nicely between Swift versions, assuming dev dependencies change little
-ARG SWIFT_PLATFORM=ubuntu18.04
-ARG SWIFT_BRANCH=swift-5.0.2-release
-ARG SWIFT_VERSION=swift-5.0.2-RELEASE
+# ARG SWIFT_PLATFORM=ubuntu18.04
+# ARG SWIFT_BRANCH=swift-5.0.2-release
+# ARG SWIFT_VERSION=swift-5.0.2-RELEASE
 
-ENV SWIFT_PLATFORM=$SWIFT_PLATFORM \
-    SWIFT_BRANCH=$SWIFT_BRANCH \
-    SWIFT_VERSION=$SWIFT_VERSION
+# ENV SWIFT_PLATFORM=$SWIFT_PLATFORM \
+#     SWIFT_BRANCH=$SWIFT_BRANCH \
+#     SWIFT_VERSION=$SWIFT_VERSION
 
 # Download GPG keys, signature and Swift package, then unpack, cleanup and execute permissions for foundation libs
 # RUN SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | tr -d .)/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz \
@@ -72,7 +72,7 @@ ENV SWIFT_PLATFORM=$SWIFT_PLATFORM \
 #     && sudo rm -r "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz \
 #     && sudo chmod -R o+r /usr/lib/swift
 
-RUN SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | tr -d .)/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz \
+RUN SWIFT_URL=https://swift.org/builds/swift-5.1-branch/ubuntu1804/swift-5.1-DEVELOPMENT-SNAPSHOT-2019-08-24-a/swift-5.1-DEVELOPMENT-SNAPSHOT-2019-08-24-a-ubuntu18.04.tar.gz \
     && curl -fSsL $SWIFT_URL -o swift.tar.gz \
     && sudo tar -xzf swift.tar.gz --directory / --strip-components=1 \
     && sudo chmod -R o+r /usr/lib/swift
