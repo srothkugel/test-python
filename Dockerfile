@@ -24,6 +24,7 @@ RUN sudo apt-get update && sudo apt-get -q install -y \
     clang \
     libicu-dev \
     libtinfo5 \
+    libncurses5 libncurses5-dev \
     libatomic1 \
     libbsd0 \
     libcurl4 \
