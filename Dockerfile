@@ -53,8 +53,10 @@ ENV SWIFT_PLATFORM=$SWIFT_PLATFORM \
 #     && sudo chmod -R o+r /usr/lib/swift
 
 RUN SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | tr -d .)/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz \
-    && curl -fSsL $SWIFT_URL -o swift.tar.gz
+    && curl -fSsL $SWIFT_URL -o swift.tar.gz \
+    && sudo tar -xzf swift.tar.gz --directory / --strip-components=1 \
+    && sudo chmod -R o+r /usr/lib/swift
 
 
 # Print Installed Swift Version
-# RUN swift --version
+RUN swift --version
