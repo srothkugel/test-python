@@ -20,6 +20,22 @@ LABEL Description="Docker Container for the Swift programming language"
 #     pkg-config \
 #     && sudo rm -r /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get -q install -y \
+    libatomic1 \
+    libbsd0 \
+    libcurl4 \
+    libxml2 \
+    libedit2 \
+    libsqlite3-0 \
+    libc6-dev \
+    binutils \
+    libgcc-5-dev \
+    libstdc++-5-dev \
+    libpython2.7 \
+    tzdata \
+    git \
+    pkg-config
+
 # Everything up to here should cache nicely between Swift versions, assuming dev dependencies change little
 ARG SWIFT_PLATFORM=ubuntu18.04
 ARG SWIFT_BRANCH=swift-5.0.2-release
