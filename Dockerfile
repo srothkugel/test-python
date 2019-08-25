@@ -59,4 +59,4 @@ RUN SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | 
 
 
 # Print Installed Swift Version
-RUN swift --version
+# RUN swift --version
